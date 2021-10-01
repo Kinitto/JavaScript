@@ -1,0 +1,15 @@
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    
+}
+
+.box:hover{
+    background-color: green;
+   
+}
+
+.box:active{
+    content:log("a");
+}
