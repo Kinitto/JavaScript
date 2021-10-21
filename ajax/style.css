@@ -1,0 +1,146 @@
+.atras{
+    width: 50px; height: 50px;
+    margin-top: -60px;
+    float: left;
+  }
+.atras:hover{
+    filter: opacity(70%);
+}
+.textoIndex{
+    font-family: Arial;
+    padding: 20px;
+    max-width: 400px;
+    max-height: 400px;
+    background-color: #E7E7E7;
+    margin: 0 auto;
+}
+.fotoIndex{
+    width: 400px; height: 200px;
+    margin-top: 50px;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+        animation: float 2s ease-out infinite;
+}
+
+@keyframes float {
+    50% {
+       transform: translate(0, 20px);
+    }
+}
+
+h2{
+    text-align: center;
+    font-family: Arial;
+}
+a{
+    font-family: Arial;
+    text-align: center;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 21px;
+    text-decoration:none;
+}
+p{
+    font-family: Arial;
+    text-align: center;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 17px;
+}
+a:hover{
+    color: #046193;
+
+}
+form{
+    font-family: Arial;
+    padding: 60px;
+    max-width: 400px;
+    max-height: 400px;
+    background-color: #E7E7E7;
+    margin: 0 auto;
+}
+form input, form textarea{
+  margin-bottom: 15px;
+  font-family: "Roboto", sans-serif;
+  width: 100%;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; 
+  border: none; 
+  color: #525c66; 
+  font-size: 1em;
+}
+button:disabled {
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+	background-color: #2e2e2e;
+	padding: 10px 45px 10px 45px;
+	border: 0;
+	font-size: 1em; 
+	color: 	white;
+}
+button:disabled:hover {
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+	background-color: #d81616;
+	padding: 10px 45px 10px 45px;
+	border: 0;
+	font-size: 1em; 
+	color: 	white;
+}
+button {
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+	background-color: #2e2e2e;
+	padding: 10px 45px 10px 45px;
+	border: 0;
+	font-size: 1em; 
+	color: 	white;
+}
+button:hover{
+	background-color: #646464;
+}
+#btnPost{
+    float: right;
+    margin-top: -595px;
+}
+textarea { resize: none; }
+
+table {
+    width: 50%;
+    border: 1px solid #000;
+    margin: auto;
+    font-family: Arial;
+    font-size: 17px;
+ }
+ th, td {
+    width: 25%;
+    text-align: center;
+    vertical-align: top;
+    border: 1px solid #000;
+    border-collapse: collapse;
+    padding: 0.3em;
+    caption-side: bottom;
+    background-color: #E7E7E7;
+ }
+ 
+ th {
+    background: #2e2e2e;
+    color:whitesmoke;
+
+ }
+
+#contenido{
+    font-family: Arial;
+    padding: 20px;
+    max-width: 800px;
+    max-height: 400px;
+    background-color: #E7E7E7;
+    margin: 0 auto;
+}

@@ -1,0 +1,83 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Como cocinar bien",
+      "author": "Karlos Arguiñano",
+      "content": "El primer consejo que podemos darte para aprender a cocinar es que le pierdas el miedo a la cocina. Hay multitud de personas que no cocinan porque no saben. Sin embargo, aunque para ser un gran cocinero hay personas más dotadas que otras, la realidad es que cocinar un plato medio decente todos podemos. Busca recetas, encuentra los ingredientes y utensilios que necesitas para elaborarlo y fíjate bien en los tiempos. Y tan solo sigue la receta al pie de la letra. Si sigues los pasos dados en la receta, tienes que tener un resultado medianamente bien."
+    },
+    {
+      "id": 2,
+      "title": "Tutorial revisar aceite coche",
+      "author": "Fernando Alonso",
+      "content": "El primer paso para comprobar el nivel de aceite del coche es estacionar en una superficie llana. Aparcar en cuestas o con el coche inclinado hará que nuestra lectura sea errónea. Ahora bien, ¿debo medirlo en frío o en caliente? Personalmente lo he medido siempre en frío, algo que muchos fabricantes de coches consideran que es idóneo, ya que el aceite ha escurrido completamente y se encuentra acumulada en el cárter."
+    },
+    {
+      "id": 3,
+      "title": "La felicidad",
+      "author": "Mariela Rumier",
+      "content": "La felicidad es una emoción que se produce en un ser consciente cuando llega a un momento de conformación, bienestar o ha conseguido ciertos objetivos que le realizan como individuo, aunque cada persona puede tener su propio significado sobre qué significa la felicidad para ella."
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "Soy el primer comentario",
+      "postId": 1,
+      "user": "Manolo"
+    },
+    {
+      "id": 2,
+      "body": "Soy el segundo jajaj",
+      "postId": 1,
+      "user": "Luis"
+    },
+    {
+      "id": 4,
+      "body": "comentarioPost2",
+      "postId": 2,
+      "user": "Joaquin"
+    },
+    {
+      "id": 5,
+      "body": "comentarioPost3",
+      "postId": 3,
+      "user": "Fran"
+    },
+    {
+      "body": "Vaya asco de cocina la verdad",
+      "user": "Paco",
+      "postId": "1",
+      "id": 6
+    },
+    {
+      "body": "asdasd",
+      "user": "Paco",
+      "postId": "1",
+      "id": 7
+    }
+  ],
+  "profile": [
+    {
+      "name": "Joaquin",
+      "mail": "joaquin@gmail.com",
+      "pass": "AsdaAS12_",
+      "phone": "664333444",
+      "id": 1
+    },
+    {
+      "name": "Paco",
+      "mail": "mrkisd",
+      "pass": "213213",
+      "phone": "2132",
+      "id": 3
+    },
+    {
+      "name": "Manolo",
+      "mail": "manolo@gmail.com",
+      "pass": "Joasd123",
+      "phone": "666777444",
+      "id": 6
+    }
+  ]
+}
