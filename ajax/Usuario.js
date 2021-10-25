@@ -103,26 +103,33 @@ function validar() {
 
 document.getElementById("formularioUser").addEventListener("submit", (event) => {
     event.preventDefault();
-    const newProduct = {
+    const usuario = {
         name: document.getElementById("name").value,
         mail: document.getElementById("mail").value,
         pass: document.getElementById("pass").value,
         phone: document.getElementById("phone").value,
     }
 
-    const peticion = new XMLHttpRequest();
-    peticion.open('POST', 'http://localhost:3000/profile');
-    peticion.setRequestHeader("Content-type", "application/json");
-    peticion.send(JSON.stringify(newProduct));              // Hay que convertir el objeto a una cadena de texto JSON para enviarlo
-    peticion.addEventListener('load', function () {
-        console.log(peticion.status);
-        if (peticion.status==201){
-            alert("Usuario creado correctamente.")
-            location.reload();
-
+    fetch('http://localhost:3000/profile', {
+        method: 'POST', 
+        body: JSON.stringify(usuario), // los datos que enviamos al servidor en el 'send'
+        headers:{
+          'Content-Type': 'application/json'
         }
-       
-    })
+      })
+      .then(response => {
+        if (response.ok) {
+            alert("Usuario creado.")
+            location.reload();
+          return response.json();
+         
+        }
+        return Promise.reject(response) 
+      })
+      .then(datos => datosServidor=datos)
+      .catch(err => {
+        console.log('Error en la petición HTTP: '+err.message);
+      })
     
 })
 

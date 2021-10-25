@@ -38,19 +38,26 @@ function borrar(e) {
     e.preventDefault();
     id= e.target.id;
     
-    const request = new XMLHttpRequest;
-    request.open('DELETE', 'http://localhost:3000/posts/' + id, true);
-    request.send();
-    request.addEventListener('load', function () {
-
-        if (request.status == 200) {
-
-            alert("Post borrado")
-            
-
+    fetch('http://localhost:3000/posts/'+id, {
+        method: 'DELETE', 
+        body: JSON.stringify(comentario), // los datos que enviamos al servidor en el 'send'
+        headers:{
+          'Content-Type': 'application/json'
         }
-    });
-    location.reload();
+      })
+      .then(response => {
+        if (response.ok) {
+          alert("Post borrado")
+            location.reload();
+          return response.json();
+         
+        }
+        return Promise.reject(response) 
+      })
+      .then(datos => datosServidor=datos)
+      .catch(err => {
+        console.log('Error en la petición HTTP: '+err.message);
+      })
 }
 }
 

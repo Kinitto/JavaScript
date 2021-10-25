@@ -73,50 +73,61 @@ function cargarUsuarios() {
     const valores = window.location.search;
     const urlParams = new URLSearchParams(valores);
     var id = urlParams.get("id");
-    
-
     let selectUser = document.getElementById("selectUser")
-    const request = new XMLHttpRequest;
-    request.open('GET', 'http://localhost:3000/profile', true);
-    request.send();
-    request.addEventListener('load', function () {
 
-        if (request.status == 200) {
-            let datos = JSON.parse(request.responseText);
 
-            for (let i of datos) {
+    fetch('http://localhost:3000/profile')
+    .then(response => {  // tenemos los datos en formato JSON, los transformamos en un objeto
+      if (response.ok) { // comprobamos que esta dentro de el status 200 y es correcto
+        return response.json();
+      }
+      return Promise.reject(response)  //hacemos que si no es correcto sea reject para que se vaya al catch
+    })
+                          
+    .then(profile => {      // ya tenemos los datos en _myData_ como un objeto o array  que podemos procesar
+       // Aquí procesamos los datos (en nuestro ejemplo los pintaríamos en la tabla)
+       profile.forEach(profile => {
+        selectUser.innerHTML += `
+        <option value = ${profile.name}>${profile.name}</option> 
+        `;
+    })
+    .catch(err => console.error(err));
 
-                selectUser.innerHTML += `
-            
-                <option value = ${i.name}>${i.name}</option> 
-                     
-                `;
-            }
-        }
-    });
+}) 
+
 }
 
 function enviarComentario(event) {
     event.preventDefault();
     let tablaComentario = document.getElementById("tablaComentario")
-    const newProduct = {
+    const comentario = {
         body: document.getElementById("textoComentario").value,
         user: document.getElementById("selectUser").value,
         postId: id,
     }
 
-    const peticion = new XMLHttpRequest();
-    peticion.open('POST', 'http://localhost:3000/comments');
-    peticion.setRequestHeader("Content-type", "application/json");
-    peticion.send(JSON.stringify(newProduct));              // Hay que convertir el objeto a una cadena de texto JSON para enviarlo
-    peticion.addEventListener('load', function () {
-        if (peticion.status == 201) {
-            alert("Comentario creado.")
-            console.log(newProduct.user);
-            location.reload();
+    fetch('http://localhost:3000/comments', {
+        method: 'POST', 
+        body: JSON.stringify(comentario), // los datos que enviamos al servidor en el 'send'
+        headers:{
+          'Content-Type': 'application/json'
         }
+      })
+      .then(response => {
+        if (response.ok) {
+            alert("Comentario creado.")
+            location.reload();
+          return response.json();
+         
+        }
+        return Promise.reject(response) 
+      })
+      .then(datos => datosServidor=datos)
+      .catch(err => {
+        console.log('Error en la petición HTTP: '+err.message);
+      })
+      
 
-    })
 }
 
 
