@@ -3,13 +3,22 @@ window.addEventListener("load", function () {
 })
 
 function cargarDatos() {
-    adsasd
+
   let tablaPosts = document.getElementById("tablaPosts");
-    tablaPosts.addEventListener("click",borrar)
-    tbody = document.getElementById("body")
-    getPosts()
-    .then(function(posts) {
-            tbody.innerHTML = '' // borramos el contenido de la tabla
+  tablaPosts.addEventListener("click",borrar)
+  tbody = document.getElementById("body")
+
+  fetch('http://localhost:3000/posts/')
+  .then(response => {  // tenemos los datos en formato JSON, los transformamos en un objeto
+    if (response.ok) { // comprobamos que esta dentro de el status 200 y es correcto
+      return response.json();
+    }
+    return Promise.reject(response)  //hacemos que si no es correcto sea reject para que se vaya al catch
+  })
+                        
+  .then(posts => {      // ya tenemos los datos en _myData_ como un objeto o array  que podemos procesar
+     // Aquí procesamos los datos (en nuestro ejemplo los pintaríamos en la tabla)
+     tbody.innerHTML = '' // borramos el contenido de la tabla
             posts.forEach(posts => {
                 const newPost = document.createElement('tr')
                 newPost.innerHTML = `
@@ -19,13 +28,10 @@ function cargarDatos() {
                    `
                 tbody.appendChild(newPost)
               })
-          })
-          .catch(function(error) {
-            console.error(error)
-          })
+    .catch(err => console.error(err));
+
+   }) 
 }
-
-
 
 function borrar(e) {
     if (e.target && e.target.matches("a.borrar")){

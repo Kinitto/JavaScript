@@ -21,19 +21,21 @@ function cargarPost() {
 
     let contenido = document.getElementById("contenido")
     let titulo = document.getElementById("titulo")
-    const request = new XMLHttpRequest;
-    request.open('GET', 'http://localhost:3000/posts?id=' + id, true);
-    request.send();
-    request.addEventListener('load', function () {
 
-        if (request.status == 200) {
-
-            let datos = JSON.parse(request.responseText);
-            titulo.innerHTML = (datos[0].title);
-            contenido.innerHTML = (datos[0].content);
-        }
-    });
-
+    fetch('http://localhost:3000/posts?id=' + id)
+    .then(response => {  // tenemos los datos en formato JSON, los transformamos en un objeto
+      if (response.ok) { // comprobamos que esta dentro de el status 200 y es correcto
+        return response.json();
+      }
+      return Promise.reject(response)  //hacemos que si no es correcto sea reject para que se vaya al catch
+    })
+                          
+    .then(posts => {      // ya tenemos los datos en _myData_ como un objeto o array  que podemos procesar
+       // Aquí procesamos los datos (en nuestro ejemplo los pintaríamos en la tabla)
+            titulo.innerHTML = (posts[0].title);
+            contenido.innerHTML = (posts[0].content);
+                })
+      .catch(err => console.error(err));
 
 }
 
@@ -42,27 +44,29 @@ function cargarComentario() {
     const urlParams = new URLSearchParams(valores);
     var id = urlParams.get("id");
     let tablaComentario = document.getElementById("tablaComentario")
-    const request = new XMLHttpRequest;
-    request.open('GET', 'http://localhost:3000/comments?postId=' + id, true);
-    request.send();
-    request.addEventListener('load', function () {
 
-        if (request.status == 200) {
+    fetch('http://localhost:3000/comments?postId=' + id)
+    .then(response => {  // tenemos los datos en formato JSON, los transformamos en un objeto
+      if (response.ok) { // comprobamos que esta dentro de el status 200 y es correcto
+        return response.json();
+      }
+      return Promise.reject(response)  //hacemos que si no es correcto sea reject para que se vaya al catch
+    })
+                          
+    .then(coments => {      // ya tenemos los datos en _myData_ como un objeto o array  que podemos procesar
+       // Aquí procesamos los datos (en nuestro ejemplo los pintaríamos en la tabla)
+       coments.forEach(coments => {
+        tablaComentario.innerHTML += `
+        <tr>
+            <td>${coments.body}</td>
+            <td>${coments.user}</td>                    
+        </tr>
+        `;
 
-            let comentarios = JSON.parse(request.responseText);
-            comentarios.forEach(comentario => {
-                tablaComentario.innerHTML += `
-                <tr>
-                    <td>${comentario.body}</td>
-                    <td>${comentario.user}</td>                    
-                </tr>
-                `;
+    })
+    .catch(err => console.error(err));
 
-            });
-
-
-        }
-    });
+}) 
 }
 
 function cargarUsuarios() {
