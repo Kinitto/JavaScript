@@ -1,0 +1,53 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+h1{
+  font-family: "Montserrat";
+  text-align: center;
+
+}
+#formularioReserva{
+  font-family: "Montserrat";
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    color: #000000;
+    background-color: #ffffff;
+    padding: 12px 25px;
+    font-size: 18px;
+    border-radius: 10px;
+    max-height: 1080px;
+    max-width: 720px;
+   
+    box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.4);
+}
+
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+
+#btnReservar {
+    color: #ffffff;
+    background-color: #4a4d49;
+    max-width: 120px;
+    padding: 12px 25px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: 0;
+    border-radius: 2px;
+    outline: 0;
+    box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.4);
+    transition: all .2s; }
+    button:hover, button:active, button:focus {
+      -ms-transform: scale(1.1);
+          transform: scale(1.1); }
+  
+  

@@ -1,0 +1,12 @@
+@import "styleImport.css" screen;
+
+p {
+        font-weight: bold;
+        font-size: 20px;
+    }
+    img {
+        display: left;
+    }
+
+
+
