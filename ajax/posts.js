@@ -4,7 +4,18 @@ window.addEventListener("load", function () {
 
 function cargarDatos() {
     
-    let tablaPosts = document.getElementById("tablaPosts");
+
+
+  fetch('https://jsonplaceholder.typicode.com/posts?userId=' + idUser)
+  .then(response => response.json())    // tenemos los datos en formato JSON, los transformamos en un objeto
+  .then(myData => {      // ya tenemos los datos en _myData_ como un objeto o array  que podemos procesar
+     // Aquí procesamos los datos (en nuestro ejemplo los pintaríamos en la tabla)
+     console.log(myData)
+   }) 
+  .catch(err => console.error(err));
+
+
+  let tablaPosts = document.getElementById("tablaPosts");
     tablaPosts.addEventListener("click",borrar)
     tbody = document.getElementById("body")
     getPosts()
@@ -25,21 +36,7 @@ function cargarDatos() {
           })
 }
 
-function getPosts() {
-    return new Promise(function(resolve, reject) {
-      let peticion = new XMLHttpRequest()
-      peticion.open('GET', 'http://localhost:3000/posts')
-      peticion.send()
-      peticion.addEventListener('load', () => {
-        if (peticion.status === 200) {
-          resolve(JSON.parse(peticion.responseText))
-        } else {
-          reject("Error " + this.status + " (" + this.statusText + ") en la petición")
-        }
-      })
-      peticion.addEventListener('error', () => reject('Error en la petición HTTP'))
-    })
-  }
+
 
 function borrar(e) {
     if (e.target && e.target.matches("a.borrar")){
