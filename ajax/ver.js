@@ -73,6 +73,7 @@ function cargarUsuarios() {
     const valores = window.location.search;
     const urlParams = new URLSearchParams(valores);
     var id = urlParams.get("id");
+    
 
     let selectUser = document.getElementById("selectUser")
     const request = new XMLHttpRequest;
