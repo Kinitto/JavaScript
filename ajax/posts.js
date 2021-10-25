@@ -3,7 +3,7 @@ window.addEventListener("load", function () {
 })
 
 function cargarDatos() {
-    
+    adsasd
   let tablaPosts = document.getElementById("tablaPosts");
     tablaPosts.addEventListener("click",borrar)
     tbody = document.getElementById("body")
