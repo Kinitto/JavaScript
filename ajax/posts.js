@@ -4,17 +4,6 @@ window.addEventListener("load", function () {
 
 function cargarDatos() {
     
-
-
-  fetch('https://jsonplaceholder.typicode.com/posts?userId=' + idUser)
-  .then(response => response.json())    // tenemos los datos en formato JSON, los transformamos en un objeto
-  .then(myData => {      // ya tenemos los datos en _myData_ como un objeto o array  que podemos procesar
-     // Aquí procesamos los datos (en nuestro ejemplo los pintaríamos en la tabla)
-     console.log(myData)
-   }) 
-  .catch(err => console.error(err));
-
-
   let tablaPosts = document.getElementById("tablaPosts");
     tablaPosts.addEventListener("click",borrar)
     tbody = document.getElementById("body")
