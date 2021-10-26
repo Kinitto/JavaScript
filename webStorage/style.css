@@ -1,0 +1,44 @@
+form{
+    font-family: Arial;
+    padding: 60px;
+    max-width: 400px;
+    max-height: 400px;
+    margin: 0 auto;
+}
+form input, form textarea{
+  margin-bottom: 15px;
+  font-family: Arial;
+  width: 100%;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; 
+  border-color: #000000; 
+  font-size: 1em;
+  resize: unset;
+  border-radius: 10px;
+}
+
+button {
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    color: #ffffff;
+    background-color: #0070da;
+    max-width: 120px;
+    padding: 12px 25px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: 0;
+    border-radius: 2px;
+    outline: 0;
+    box-shadow: 3px 3px 20px rgba(17, 154, 233, 0.4);
+    transition: all .2s; 
+}
+
+button:hover, button:active, button:focus {
+      -ms-transform: scale(1.1);
+          transform: scale(1.1); 
+        
+}
+
