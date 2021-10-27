@@ -10,16 +10,23 @@
 </head>
 
 <body>
-    <form id="formulario">
-        <textarea id="textoTarea"></textarea>
-        <button type="submit" id="btnAñadir">Añadir</button>
-    </form>
-
-    <div id="div">
-
+    <div class="mainContainer">
+        <h1>Lista de Tareas</h1>
+        <div class="crearTarea">
+            <form>
+                <textarea id="textoTask" placeholder="Agregar tarea..."></textarea>
+                <button id="addTask">+</button>
+            </form>
+        </div>
+        <div class="listaContainer">
+            <ul>
+         
+            </ul>
+        </div>
+        <div id="taskVacias">
+            <p id="noTarea">No tienes tareas pendientes.</p>
+        </div>
     </div>
-
-    <script src='script.js'></script>
-
+    <script src="script.js"></script>
 </body>
 </html>
