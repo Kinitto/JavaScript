@@ -1,0 +1,116 @@
+form{
+    font-family: Arial;
+    padding: 60px;
+    max-width: 400px;
+    max-height: 400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-end;
+}
+form input, form textarea{
+  margin-bottom: 15px;
+  font-family: Arial;
+  width: 100%;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; 
+  border-color: #000000; 
+  font-size: 1em;
+  resize: unset;
+  border-radius: 8px;
+}
+textarea{
+    max-height: 40px;
+}
+
+#addTask {
+    margin-left: 3%;
+    margin-bottom: 4%;
+    color: #ffffff;
+    background-color: #0070da;
+    max-width: 120px;
+    padding: 12px 25px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: 0;
+    border-radius: 2px;
+    outline: 0;
+    box-shadow: 3px 3px 20px rgba(0, 162, 255, 0.3);
+    transition: all .2s; 
+    border-radius: 4px;
+}
+
+#addTask:hover, #addTask:active, #addTask:focus {
+      -ms-transform: scale(1.1);
+          transform: scale(1.1); 
+        
+}
+
+button {
+    margin-left: 10px;
+    color: #ffffff;
+    background-color: #d30000;
+    max-width: 120px;
+    padding: 12px 25px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: 0;
+    border-radius: 2px;
+    outline: 0;
+    box-shadow: 3px 3px 20px rgba(255, 0, 0, 0.3);
+    transition: all .2s; 
+    border-radius: 4px;
+}
+
+button:hover, button:active, button:focus {
+      -ms-transform: scale(1.1);
+          transform: scale(1.1); 
+        
+}
+
+#noTarea{
+
+    text-align: center;
+    font-family: Arial;
+    font-size: 18px;
+}
+
+h1{
+    text-align: center;
+    font-family: Arial;
+}
+
+
+li{
+   
+    max-width: 400px;
+    max-height: 400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 19px;
+
+}
+
+.listaContainer p{
+
+    margin: auto;
+    text-align: center;
+     font-family: Arial;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 15px;
+   padding-left: 20px;
+   padding-right: 20px;
+   padding-bottom: 10px;
+   padding-top: 10px;
+   white-space: nowrap;
+   
+}
+
+
+
+
