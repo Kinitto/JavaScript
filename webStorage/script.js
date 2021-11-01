@@ -31,15 +31,30 @@ addTask.addEventListener("click", (e) => {
   }
 });
 
-window.onload = function(e) {
 
+window.addEventListener("load", (e) => {
   e.preventDefault();
-  const item = e.target.parentElement;
+  
+  for (let i = 1; i <= localStorage.length; i++) {
 
-  let objetos = localStorage.getItem("Task"+1);
+  var text = (JSON.parse(window.localStorage.getItem("Task"+i)));
 
-console.log(objetos);
-};
+  const li = document.createElement("li");
+  li.id=i
+  const p = document.createElement("p");
+  p.textContent = text.task;
+
+  li.appendChild(p);
+  li.appendChild(btnBorrar());
+  ul.appendChild(li);
+    
+  }
+  
+});
+
+ 
+
+
 
 function btnBorrar() {
   const btnBorrar = document.createElement("button");
