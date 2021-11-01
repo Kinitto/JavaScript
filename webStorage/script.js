@@ -2,11 +2,11 @@ const textoTask = document.getElementById("textoTask");
 const addTask = document.getElementById("addTask");
 const taskVacias = document.getElementById("taskVacias");
 const ul = document.querySelector("ul");
-let i = 0;
+let i = localStorage.length;
 //añado listener al boton de crear tarea, tenemos un 1 que definira que task estamos haciendo
 addTask.addEventListener("click", (e) => {
   e.preventDefault();
-  i++;
+ 
   const text = textoTask.value;
 //si el contenido es distinto a null, se forma el parrafo en la lista con el texto introducido
   if (text !== "") {
@@ -25,6 +25,7 @@ addTask.addEventListener("click", (e) => {
     }
     //pasamos el objeto a string y lo metemos al localstorage.
     localStorage.setItem('Task'+i,JSON.stringify(tarea));
+    i++;
 
     textoTask.value = "";
     taskVacias.style.display = "none";
@@ -35,7 +36,8 @@ addTask.addEventListener("click", (e) => {
 window.addEventListener("load", (e) => {
   e.preventDefault();
   
-  for (let i = 1; i <= localStorage.length; i++) {
+  
+  for (let i = 0; i <= localStorage.length; i++) {
 
   var text = (JSON.parse(window.localStorage.getItem("Task"+i)));
 
