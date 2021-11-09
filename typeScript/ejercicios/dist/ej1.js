@@ -1,3 +1,5 @@
+"use strict";
+exports.__esModule = true;
 // Uso de Let y Const
 var nombre = "Ricardo Tapia";
 var edad = 23;
@@ -41,3 +43,6 @@ var Rectangulo = /** @class */ (function () {
     };
     return Rectangulo;
 }());
+var modulos_1 = require("./modulos");
+var suma1 = new modulos_1.suma(2, 3);
+console.log(suma1.sumar(2, 3));

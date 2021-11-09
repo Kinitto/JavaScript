@@ -61,3 +61,8 @@ class Rectangulo{
     }
 
 }
+
+import {suma} from './modulos'
+
+let suma1 = new suma(2,3);
+console.log(suma1.sumar(2,3))
