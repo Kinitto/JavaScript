@@ -1,6 +1,0 @@
-{
-    "compilerOptions": {"outDir": "salida"},
-    "include": [
-        "src/*"
-    ]
-}
